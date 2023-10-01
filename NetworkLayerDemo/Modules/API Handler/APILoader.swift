@@ -11,6 +11,7 @@ struct APILoader {
     
     private let urlSession: URLSession = .shared
     
+    //MARK: - GET API Request
     func loadGETAPIRequest(urlRequest: URLRequest, completionHandler: @escaping (Any?, ServiceError?) -> ()) {
         
         debugPrint("URL===========", urlRequest.url?.absoluteString ?? "")

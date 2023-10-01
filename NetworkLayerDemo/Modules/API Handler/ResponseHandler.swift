@@ -16,6 +16,7 @@ protocol ResponseHandler {
     func parseResponse<T: Codable>(data: Data, response: HTTPURLResponse) throws -> T
 }
 
+// MARK: - Response Handler Supporting methods
 extension ResponseHandler {
     func defaultParseResponse<T: Codable>(data: Data, response: HTTPURLResponse) throws -> T {
         let jsonDecoder = JSONDecoder()

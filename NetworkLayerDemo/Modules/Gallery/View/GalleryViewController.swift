@@ -11,15 +11,19 @@ import UIKit
 //MARK: - View Controller setup
 class GalleryViewController: UIViewController {
     
+    //MARK: - Constants
     struct Constants {
         static let cellheight: CGFloat = 100.0
     }
-
+    
+    //MARK: - IBOutlets
     @IBOutlet private weak var galleryTableView: UITableView!
     
+    //MARK: - Private properties
     private var dataSource: Gallery?
     private var viewModel: GalleryViewModel?
     
+    //MARK: - View life cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -27,6 +31,7 @@ class GalleryViewController: UIViewController {
         getGalleryData()
     }
     
+    //MARK: - Private methods
     private func setupTableView() {
         galleryTableView.delegate = self
         galleryTableView.dataSource = self
@@ -74,6 +79,7 @@ extension GalleryViewController: UITableViewDelegate {
 
 //MARK: - API Calls
 extension GalleryViewController: Alert {
+    
     private func getGalleryData() {
         guard let viewModel = viewModel else {return}
         viewModel.getGalleryList { (galleryModel, error) in

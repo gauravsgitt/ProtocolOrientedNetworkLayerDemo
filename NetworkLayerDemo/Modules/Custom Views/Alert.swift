@@ -12,6 +12,7 @@ protocol Alert {}
 
 extension Alert where Self: UIViewController {
     
+    //MARK: - Alert With Try Again Button
     func showAlertWithTryAgainButton(message: String, title: String? = nil, tryAgainAction: (() -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
@@ -23,6 +24,7 @@ extension Alert where Self: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    //MARK: - Alert With Ok Button
     func showAlertWithOkButton(message: String, title: String? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
