@@ -11,7 +11,7 @@ protocol RequestHandler {
     func makeRequest(param: [String: Any]?, urlVersion: APIVersion, endPoint: EndPoints?) -> URLRequest?
 }
 
-// MARK: Request Handler Supporting methods
+// MARK: - Request Handler Supporting methods
 extension RequestHandler {
     
     func setRequestBody(parameters:[String: Any], request: inout URLRequest) throws {

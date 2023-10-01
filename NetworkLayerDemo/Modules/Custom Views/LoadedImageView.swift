@@ -11,6 +11,7 @@ import UIKit
 class LoadedImageView: UIImageView {
     
     private let imageCache = NSCache<AnyObject, UIImage>()
+    
     func loadImage(imageURL: URL, placeHolderImage: String){
         self.image = UIImage(named: placeHolderImage)
         
